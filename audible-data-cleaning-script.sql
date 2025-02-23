@@ -59,21 +59,21 @@ REGEXP_REPLACE(
 						REGEXP_REPLACE(
 							REGEXP_REPLACE(
 								REGEXP_REPLACE(
-    								REGEXP_REPLACE(
-       									REGEXP_REPLACE(
-            								REGEXP_REPLACE(author, 
-                							'([a-z])([A-Z])', '\1 \2', 'g'),      -- adds space between lowercase and uppercase letters 
-            							'([A-Za-z])\.(?=[A-Za-z])', '\1. ', 'g'), -- adds space after periods when followed by letters (e.g. initials)
-          							',([A-Za-z])',', \1','g'),                    -- adds space after commas when followed by letters
-        						'([A-Za-z])([0-9])', '\1 \2', 'g'),               -- adds space between letters and numbers
-    						'([0-9])([A-Za-z])', '\1 \2', 'g'),                   -- adds space between numbers and letters
-    					',([A-Za-zÅåÄäÖö])', ', \1', 'g'),                        -- adds space after commas when followed by accented characters
-  					'([ÁÉÍÓÚáéíóú])([A-Z])', '\1 \2', 'g'),                       -- adds space between accented letters and uppercase letters
-				'([А-Яа-я])([А-Я])','\1 \2','g'),                                 -- adds space between Cyrillic characters (Russian, etc.)
-			'([А-Яа-я])\.(?=[А-Яа-я])', '\1. ', 'g'),                             -- adds space after periods when followed by Cyrillic letters
-		',([А-Яа-я])', ', \1', 'g'),                                              -- adds space after commas when followed by Cyrillic letters
- 	'Mc ', 'Mc', 'g'),                                                            -- removes space that was previously added to surnames such as 'McCool'
- 'BKFKStudio', 'BKFK Studio', 'g');                                               -- adds space between 'BKFK' and 'Studio'
+    									REGEXP_REPLACE(
+       										REGEXP_REPLACE(
+            										REGEXP_REPLACE(author, 
+                									'([a-z])([A-Z])', '\1 \2', 'g'),      -- adds space between lowercase and uppercase letters 
+            									'([A-Za-z])\.(?=[A-Za-z])', '\1. ', 'g'),     -- adds space after periods when followed by letters (e.g. initials)
+          								',([A-Za-z])',', \1','g'),                    	      -- adds space after commas when followed by letters
+        							'([A-Za-z])([0-9])', '\1 \2', 'g'),                           -- adds space between letters and numbers
+    							'([0-9])([A-Za-z])', '\1 \2', 'g'),                                   -- adds space between numbers and letters
+    						',([A-Za-zÅåÄäÖö])', ', \1', 'g'),                                            -- adds space after commas when followed by accented characters
+  					'([ÁÉÍÓÚáéíóú])([A-Z])', '\1 \2', 'g'),                                               -- adds space between accented letters and uppercase letters
+				'([А-Яа-я])([А-Я])','\1 \2','g'),                                                             -- adds space between Cyrillic characters (Russian, etc.)
+			'([А-Яа-я])\.(?=[А-Яа-я])', '\1. ', 'g'),                                                             -- adds space after periods when followed by Cyrillic letters
+		',([А-Яа-я])', ', \1', 'g'),                                                                                  -- adds space after commas when followed by Cyrillic letters
+ 	'Mc ', 'Mc', 'g'),                                                                                                    -- removes space that was previously added to surnames such as 'McCool'
+ 'BKFKStudio', 'BKFK Studio', 'g');                                                                                           -- adds space between 'BKFK' and 'Studio'
 
 UPDATE audible_audiobooks.audible_staging
 SET narrator = 
@@ -86,21 +86,21 @@ REGEXP_REPLACE(
 						REGEXP_REPLACE(
 							REGEXP_REPLACE(
 								REGEXP_REPLACE(
-    								REGEXP_REPLACE(
-       									REGEXP_REPLACE(
-            								REGEXP_REPLACE(narrator, 
-                							'([a-z])([A-Z])', '\1 \2', 'g'),      -- adds space between lowercase and uppercase letters 
-            							'([A-Za-z])\.(?=[A-Za-z])', '\1. ', 'g'), -- adds space after periods when followed by letters (e.g. initials)
-          							',([A-Za-z])',', \1','g'),                    -- adds space after commas when followed by letters
-        						'([A-Za-z])([0-9])', '\1 \2', 'g'),               -- adds space between letters and numbers
-    						'([0-9])([A-Za-z])', '\1 \2', 'g'),                   -- adds space between numbers and letters
-    					',([A-Za-zÅåÄäÖö])', ', \1', 'g'),                        -- adds space after commas when followed by accented characters
-  					'([ÁÉÍÓÚáéíóú])([A-Z])', '\1 \2', 'g'),                       -- adds space between accented letters and uppercase letters
-				'([А-Яа-я])([А-Я])','\1 \2','g'),                                 -- adds space between Cyrillic characters (Russian, etc.)
-			'([А-Яа-я])\.(?=[А-Яа-я])', '\1. ', 'g'),                             -- adds space after periods when followed by Cyrillic letters
-		',([А-Яа-я])', ', \1', 'g'),                                              -- adds space after commas when followed by Cyrillic letters
- 	'Mc ', 'Mc', 'g'),                                                            -- removes space that was previously added to surnames such as 'McCool'
- 'BKFKStudio', 'BKFK Studio', 'g');                                               -- adds space between 'BKFK' and 'Studio'                                                          -- removes space that was previously added to surnames such as 'McCool'
+    									REGEXP_REPLACE(
+       										REGEXP_REPLACE(
+            										REGEXP_REPLACE(author, 
+                									'([a-z])([A-Z])', '\1 \2', 'g'),      -- adds space between lowercase and uppercase letters 
+            									'([A-Za-z])\.(?=[A-Za-z])', '\1. ', 'g'),     -- adds space after periods when followed by letters (e.g. initials)
+          								',([A-Za-z])',', \1','g'),                    	      -- adds space after commas when followed by letters
+        							'([A-Za-z])([0-9])', '\1 \2', 'g'),                           -- adds space between letters and numbers
+    							'([0-9])([A-Za-z])', '\1 \2', 'g'),                                   -- adds space between numbers and letters
+    						',([A-Za-zÅåÄäÖö])', ', \1', 'g'),                                            -- adds space after commas when followed by accented characters
+  					'([ÁÉÍÓÚáéíóú])([A-Z])', '\1 \2', 'g'),                                               -- adds space between accented letters and uppercase letters
+				'([А-Яа-я])([А-Я])','\1 \2','g'),                                                             -- adds space between Cyrillic characters (Russian, etc.)
+			'([А-Яа-я])\.(?=[А-Яа-я])', '\1. ', 'g'),                                                             -- adds space after periods when followed by Cyrillic letters
+		',([А-Яа-я])', ', \1', 'g'),                                                                                  -- adds space after commas when followed by Cyrillic letters
+ 	'Mc ', 'Mc', 'g'),                                                                                                    -- removes space that was previously added to surnames such as 'McCool'
+ 'BKFKStudio', 'BKFK Studio', 'g');                                                                                           -- adds space between 'BKFK' and 'Studio'                                                  -- removes space that was previously added to surnames such as 'McCool'
 
 
 
